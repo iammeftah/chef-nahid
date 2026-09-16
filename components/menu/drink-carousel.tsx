@@ -62,7 +62,6 @@ export function DrinkCarousel({ products }: { products: Product[] }) {
           >
             <div className="relative flex h-[26rem] w-full max-w-sm items-center justify-center sm:h-[30rem]">
               {/* decorative glow behind the drink */}
-              <div className="absolute h-56 w-56 rounded-full bg-primary/15 blur-3xl sm:h-64 sm:w-64" />
               <Image
                 src={product.image}
                 alt={product.name}

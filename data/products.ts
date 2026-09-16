@@ -132,11 +132,10 @@ export const products: Product[] = [
   { id: "salade-de-fruits", name: "Salade de Fruits", category: "Jus", price: 17, currency: "DH", image: "/images/jus/salade-de-fruits.png", ingredients: ["Fruits frais de saison"] },
 
   // 🥤 Boissons
-  { id: "coca-cola", name: "Coca Cola", category: "Boissons", price: 7, currency: "DH", image: "/images/boissons/placeholder.png" },
-  { id: "fanta-orange", name: "Fanta Orange", category: "Boissons", price: 7, currency: "DH", image: "/images/boissons/placeholder.png" },
-  { id: "fanta-lemon", name: "Fanta Lemon", category: "Boissons", price: 7, currency: "DH", image: "/images/boissons/placeholder.png" },
-  { id: "hawai", name: "Hawai", category: "Boissons", price: 8, currency: "DH", image: "/images/boissons/placeholder.png" },
-  { id: "sprite", name: "Sprite", category: "Boissons", price: 7, currency: "DH", image: "/images/boissons/placeholder.png" },
+  { id: "coca-cola", name: "Coca Cola", category: "Boissons", price: 7, currency: "DH", image: "/images/boissons/boisson-coca-cola.png" },
+  { id: "fanta", name: "Fanta", category: "Boissons", price: 7, currency: "DH", image: "/images/boissons/boisson-fanta.png" },
+  { id: "hawai", name: "Hawai", category: "Boissons", price: 8, currency: "DH", image: "/images/boissons/boisson-hawai.png" },
+  { id: "sprite", name: "Sprite", category: "Boissons", price: 7, currency: "DH", image: "/images/boissons/boisson-sprite.png" },
 
   // 🥞 Crêpe
   { id: "crepe-chocolat", name: "Crêpe Chocolat", category: "Crêpe", price: 26, currency: "DH", image: "/images/crepe/crepe-chocolat.png", ingredients: ["Pâte à crêpe", "Chocolat fondu"] },
