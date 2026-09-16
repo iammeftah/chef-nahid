@@ -1,32 +1,21 @@
-import { Geist, Geist_Mono, IBM_Plex_Sans, Merriweather } from "next/font/google"
-
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import { IBM_Plex_Sans } from "next/font/google";
+import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const merriweatherHeading = Merriweather({subsets:['latin'],variable:'--font-heading'});
-
-const ibmPlexSans = IBM_Plex_Sans({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-mono",
-})
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", ibmPlexSans.variable, merriweatherHeading.variable)}
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+    <html lang="en" className={cn("antialiased", ibmPlexSans.variable, "font-sans")}>
+      <body>{children}</body>
     </html>
-  )
+  );
 }
