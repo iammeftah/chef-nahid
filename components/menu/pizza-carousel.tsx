@@ -8,8 +8,9 @@ import type { Product } from "@/data/products";
 const SWIPE_THRESHOLD = 50;
 
 /**
- * The pizza itself never translates — it stays perfectly still and simply
- * rotates (a 3D flip on the Y axis) to introduce the next one. The drag
+ * The pizza itself never translates — it stays perfectly centered and spins
+ * flat, in the plane of the screen (like a record on a turntable), to
+ * introduce the next one, instead of flipping edge-on like a coin. The drag
  * gesture is captured but visually pinned (dragElastic 0, constraints 0/0)
  * so the image doesn't shift a single pixel while swiping.
  */
@@ -41,20 +42,19 @@ export function PizzaCarousel({ products }: { products: Product[] }) {
     >
       <motion.div
         className="relative h-[26rem] w-full max-w-md cursor-grab active:cursor-grabbing sm:h-[32rem] sm:max-w-lg"
-        style={{ perspective: 1000 }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0}
         onDragEnd={handleDragEnd}
       >
-        <AnimatePresence initial={false} custom={direction} mode="popLayout">
+        <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={product.id}
             custom={direction}
-            initial={{ opacity: 0, rotateY: direction >= 0 ? 90 : -90 }}
-            animate={{ opacity: 1, rotateY: 0 }}
-            exit={{ opacity: 0, rotateY: direction >= 0 ? -90 : 90 }}
-            transition={{ duration: 0.45, ease: "easeInOut" }}
+            initial={{ opacity: 0, rotate: direction >= 0 ? 30 : -30 }}
+            animate={{ opacity: 1, rotate: 0 }}
+            exit={{ opacity: 0, rotate: direction >= 0 ? -30 : 30 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
             className="absolute inset-0"
           >
             <Image

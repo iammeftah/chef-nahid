@@ -6,24 +6,32 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import type { Product } from "@/data/products";
 
+type RevealLevel = "caption" | "ingredients" | null;
+
 export function MenuTile({
   product,
   index,
   large = false,
-  isOpen = false,
+  revealLevel = null,
   onToggle,
 }: {
   product: Product;
   index: number;
   large?: boolean;
-  isOpen?: boolean;
+  revealLevel?: RevealLevel;
   onToggle?: () => void;
 }) {
   const [broken, setBroken] = useState(false);
   const hasIngredients = Boolean(product.ingredients && product.ingredients.length > 0);
 
+  // Tiles with no ingredients have nothing to progressively reveal, so
+  // their name/price bar is always on and they aren't interactive.
+  const showCaption = !hasIngredients || revealLevel === "caption" || revealLevel === "ingredients";
+  const showIngredientsPanel = hasIngredients && revealLevel === "ingredients";
+
   return (
     <motion.div
+      data-tile-id={product.id}
       initial={{ opacity: 0, y: 14 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
@@ -33,7 +41,8 @@ export function MenuTile({
       className={cn(
         "group relative overflow-hidden border border-border bg-background transition-colors duration-200 hover:border-primary",
         hasIngredients && "cursor-pointer",
-        large ? "col-span-2 aspect-[20/9]" : "aspect-square"
+        "aspect-square",
+        large && "col-span-2 row-span-2"
       )}
     >
       {!broken && (
@@ -51,46 +60,58 @@ export function MenuTile({
         {String(index + 1).padStart(2, "0")}
       </span>
 
-      <div className="absolute inset-x-0 bottom-0 bg-black/80 px-3 py-2.5">
-        {product.featured && (
-          <span className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
-            Signature
-          </span>
+      {/* Name / price bar — hidden by default for tiles with ingredients,
+          revealed on the first tap. Always on for tiles without ingredients. */}
+      <AnimatePresence>
+        {showCaption && (
+          <motion.div
+            initial={hasIngredients ? { opacity: 0, y: 8 } : false}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute inset-x-0 bottom-0 bg-black/80 px-3 py-2.5"
+          >
+            {product.featured && (
+              <span className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
+                Signature
+              </span>
+            )}
+
+            <h3
+              className={cn(
+                "font-semibold leading-snug text-foreground",
+                large ? "text-lg" : "text-sm"
+              )}
+            >
+              {product.name}
+            </h3>
+
+            {hasIngredients && (
+              <span className="mt-0.5 block text-[10px] font-medium uppercase tracking-wide text-primary/90">
+                Voir les ingrédients
+              </span>
+            )}
+
+            <div className="mt-1.5 flex items-end justify-between gap-3">
+              <span aria-hidden className="h-px flex-1 border-t border-dashed border-border" />
+              <div className="shrink-0 text-right">
+                <span className={cn("font-bold text-primary", large ? "text-xl" : "text-base")}>
+                  {product.price}
+                </span>
+                <span className="ml-1 text-[9px] font-medium uppercase tracking-wider text-muted-foreground">
+                  {product.currency}
+                </span>
+              </div>
+            </div>
+          </motion.div>
         )}
-
-        <h3
-          className={cn(
-            "font-semibold leading-snug text-foreground",
-            large ? "text-lg" : "text-sm"
-          )}
-        >
-          {product.name}
-        </h3>
-
-        {hasIngredients && (
-          <span className="mt-0.5 block text-[10px] font-medium uppercase tracking-wide text-primary/90">
-            Voir les ingrédients
-          </span>
-        )}
-
-        <div className="mt-1.5 flex items-end justify-between gap-3">
-          <span aria-hidden className="h-px flex-1 border-t border-dashed border-border" />
-          <div className="shrink-0 text-right">
-            <span className={cn("font-bold text-primary", large ? "text-xl" : "text-base")}>
-              {product.price}
-            </span>
-            <span className="ml-1 text-[9px] font-medium uppercase tracking-wider text-muted-foreground">
-              {product.currency}
-            </span>
-          </div>
-        </div>
-      </div>
+      </AnimatePresence>
 
       {/* Full ingredient list, covering the whole tile so nothing gets
-          clipped with "...". Only one tile in the grid can have this open
-          at once — opening another one closes this one automatically. */}
+          clipped with "...". Shown on the second tap; a third tap, or a
+          click anywhere else, collapses everything back to just the image. */}
       <AnimatePresence>
-        {isOpen && hasIngredients && (
+        {showIngredientsPanel && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

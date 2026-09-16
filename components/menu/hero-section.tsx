@@ -108,10 +108,10 @@ export function HeroSection({ featured }: { featured: Product[] }) {
           relation to how the image layer is sized or positioned. */}
       <div className="pointer-events-none absolute inset-0 z-20 flex flex-col justify-between px-4 py-14 sm:px-6 sm:py-16">
         <div className="flex flex-col items-center text-center">
-          <div className="h-16 w-16 overflow-hidden rounded-full border border-border bg-background/80 sm:h-20 sm:w-20">
+          <div className="h-64 overflow-hidden">
             {!logoBroken ? (
               <Image
-                src="/images/logo-placeholder.png"
+                src="/chefnahid.png"
                 alt="Logo Nahid Snack"
                 width={80}
                 height={80}
@@ -126,9 +126,9 @@ export function HeroSection({ featured }: { featured: Product[] }) {
           </div>
 
           <h1 className="mt-4 text-4xl font-extrabold uppercase tracking-tight text-foreground sm:text-5xl">
-            Nahid Snack
+            CHEF NAHID
           </h1>
-          <p className="mx-auto mt-3 max-w-xs text-sm text-muted-foreground sm:max-w-sm">
+          <p className="mx-auto mt-3 max-w-xs text-sm text-black dark:text-white sm:max-w-sm">
             Sandwichs, pizzas, jus &amp; douceurs faits maison — préparés à la commande, à Marrakech.
           </p>
           <span className="mt-5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">

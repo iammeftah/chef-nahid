@@ -58,7 +58,7 @@ export function DrinkCarousel({ products }: { products: Product[] }) {
             ref={(el) => {
               itemRefs.current[i] = el;
             }}
-            className="flex w-full shrink-0 snap-center flex-col items-center px-4 sm:px-6"
+            className="flex w-full shrink-0 snap-center flex-col items-center px-4 sm:px-6 "
           >
             <div className="relative flex h-[26rem] w-full max-w-sm items-center justify-center sm:h-[30rem]">
               {/* decorative glow behind the drink */}

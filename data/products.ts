@@ -40,6 +40,15 @@ export interface Product {
   featured?: boolean;
   /** Short ingredient list, shown to customers on the product card/carousel. */
   ingredients?: string[];
+  /**
+   * Manual zoom multiplier for the drink carousel (default 1). Source
+   * photos aren't all cropped the same way — some cups fill their canvas,
+   * others have more empty margin around them — so this lets you nudge an
+   * individual image up or down until it visually matches its neighbors.
+   * e.g. 0.9 to shrink a drink that looks too big, 1.1 to grow one that
+   * looks too small.
+   */
+  imageScale?: number;
 }
 
 export const products: Product[] = [
@@ -66,9 +75,9 @@ export const products: Product[] = [
 
   // 🍽️ Plat (Version Plat)
   { id: "plat-sepia", name: "Plat Sepia", category: "Plat", price: 25, currency: "DH", image: "/images/plat/plat-sepia.png", ingredients: ["Sépia panée", "Frites", "Salade", "Sauce"] },
-  { id: "plat-mixte", featured: true, name: "Plat Mixte", category: "Plat", price: 30, currency: "DH", image: "/images/plat/plat-mixte.png", ingredients: ["Poulet", "Viande hachée", "Frites", "Salade", "Sauce"] },
   { id: "plat-poulet", name: "Plat Poulet", category: "Plat", price: 25, currency: "DH", image: "/images/plat/plat-poulet.png", ingredients: ["Poulet grillé", "Frites", "Salade", "Sauce"] },
   { id: "plat-viande-hachee", name: "Plat Viande Hachée", category: "Plat", price: 25, currency: "DH", image: "/images/plat/plat-viande-hachee.png", ingredients: ["Viande hachée", "Frites", "Salade", "Sauce"] },
+  { id: "plat-mixte", name: "Plat Mixte", category: "Plat", price: 30, currency: "DH", image: "/images/plat/plat-mixte.png", ingredients: ["Poulet", "Viande hachée", "Frites", "Salade", "Sauce"] },
 
   // 🍕 Pizza
   { id: "pizza-poulet", name: "Poulet", category: "Pizza", price: 25, currency: "DH", image: "/images/pizza/pizza-poulet.png", ingredients: ["Pâte", "Sauce tomate", "Poulet", "Mozzarella", "Poivrons", "Olives"] },
@@ -122,7 +131,7 @@ export const products: Product[] = [
   { id: "mangue-orange", name: "Mangue Orange", category: "Jus", price: 15, currency: "DH", image: "/images/jus/mangue-orange.png", ingredients: ["Mangue", "Orange"] },
   { id: "jus-d-ananas", name: "Jus d'Ananas", category: "Jus", price: 17, currency: "DH", image: "/images/jus/jus-d-ananas.png", ingredients: ["Ananas frais"] },
   { id: "jus-de-fraise", name: "Jus de Fraise", category: "Jus", price: 15, currency: "DH", image: "/images/jus/jus-de-fraise.png", ingredients: ["Fraise", "Lait ou eau"] },
-  { id: "jus-fruit-du-dragon", name: "Jus Fruit du Dragon", category: "Jus", price: 22, currency: "DH", image: "/images/jus/jus-fruit-du-dragon.png", ingredients: ["Fruit du dragon", "Eau"] },
+  { id: "jus-fruit-du-dragon", name: "Jus Fruit du Dragon", category: "Jus", price: 22, currency: "DH", image: "/images/jus/jus-fruit-du-dragon.png", imageScale: 0.88, ingredients: ["Fruit du dragon", "Eau"] },
   { id: "jus-de-kiwi", name: "Jus de Kiwi", category: "Jus", price: 15, currency: "DH", image: "/images/jus/jus-de-kiwi.png", ingredients: ["Kiwi frais"] },
   { id: "jus-mojito", name: "Jus Mojito", category: "Jus", price: 15, currency: "DH", image: "/images/jus/jus-mojito.png", ingredients: ["Citron vert", "Menthe", "Sucre", "Eau gazeuse"] },
   { id: "jus-d-avocat", name: "Jus d'Avocat", category: "Jus", price: 17, currency: "DH", image: "/images/jus/jus-d-avocat.png", ingredients: ["Avocat", "Lait", "Sucre"] },

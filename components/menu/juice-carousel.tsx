@@ -59,12 +59,13 @@ export function JuiceCarousel({ products }: { products: Product[] }) {
             }}
             className="flex w-full shrink-0 snap-center flex-col items-center px-4 sm:px-6"
           >
-            <div className="relative h-56 w-full max-w-xs sm:h-64">
+            <div className="relative h-56 w-full max-w-xs pb-3 sm:h-64">
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
-                className="pointer-events-none select-none object-contain"
+                className="pointer-events-none select-none object-contain object-bottom"
+                style={{ transform: `scale(${product.imageScale ?? 1})`, transformOrigin: "center bottom" }}
                 draggable={false}
               />
             </div>
