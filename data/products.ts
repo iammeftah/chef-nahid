@@ -65,13 +65,13 @@ export const products: Product[] = [
   { id: "pasticcio-mixte", name: "Pasticcio Mixte", category: "Pasticcio", price: 40, currency: "DH", image: "/images/pasticcio/pasticcio-mixte.png", ingredients: ["Pâte feuilletée", "Poulet", "Viande hachée", "Béchamel", "Fromage"] },
 
   // 🥖 Sandwich
-  { id: "sandwich-sepia", name: "Sandwich Sepia", category: "Sandwich", price: 18, currency: "DH", image: "/images/sandwich/sandwich-sepia.png", ingredients: ["Pain", "Sépia panée", "Salade", "Tomate", "Sauce"] },
+  { id: "sandwich-sepia", name: "Sandwich Sepia", category: "Sandwich", price: 20, currency: "DH", image: "/images/sandwich/sandwich-sepia.png", ingredients: ["Pain", "Sépia panée", "Salade", "Tomate", "Sauce"] },
   { id: "sandwich-poulet-crispy", name: "Sandwich Poulet ou Crispy", category: "Sandwich", price: 20, currency: "DH", image: "/images/sandwich/sandwich-poulet-crispy.png", ingredients: ["Pain", "Poulet grillé ou crispy", "Salade", "Tomate", "Sauce"] },
   { id: "sandwich-viande-hachee", name: "Sandwich Viande Hachée", category: "Sandwich", price: 20, currency: "DH", image: "/images/sandwich/sandwich-viande-hachee.png", ingredients: ["Pain", "Viande hachée", "Salade", "Tomate", "Sauce"] },
   { id: "sandwich-mixte", name: "Sandwich Mixte", category: "Sandwich", price: 25, currency: "DH", image: "/images/sandwich/sandwich-mixte.png", ingredients: ["Pain", "Poulet", "Viande hachée", "Salade", "Tomate", "Sauce"] },
   { id: "bocadillos", name: "Bocadillos", category: "Sandwich", price: 12, currency: "DH", image: "/images/sandwich/bocadillos.png", ingredients: ["Pain bocadillo", "Charcuterie", "Fromage", "Salade"] },
-  { id: "tortia", name: "Tortia", category: "Sandwich", price: 12, currency: "DH", image: "/images/sandwich/tortia.png", ingredients: ["Tortilla", "Poulet ou viande", "Salade", "Fromage", "Sauce"] },
-  { id: "sandwich-thon", name: "Sandwich Thon", category: "Sandwich", price: 10, currency: "DH", image: "/images/sandwich/sandwich-thon.png", ingredients: ["Pain", "Thon", "Olives", "Tomate", "Oignon", "Mayonnaise"] },
+  { id: "tortia", name: "Tortia", category: "Sandwich", price: 15, currency: "DH", image: "/images/sandwich/tortia.png", ingredients: ["Tortilla", "Poulet ou viande", "Salade", "Fromage", "Sauce"] },
+  { id: "sandwich-thon", name: "Sandwich Thon", category: "Sandwich", price: 15, currency: "DH", image: "/images/sandwich/sandwich-thon.png", ingredients: ["Pain", "Thon", "Olives", "Tomate", "Oignon", "Mayonnaise"] },
 
   // 🍽️ Plat (Version Plat)
   { id: "plat-sepia", name: "Plat Sepia", category: "Plat", price: 25, currency: "DH", image: "/images/plat/plat-sepia.png", ingredients: ["Sépia panée", "Frites", "Salade", "Sauce"] },
@@ -80,9 +80,9 @@ export const products: Product[] = [
   { id: "plat-mixte", name: "Plat Mixte", category: "Plat", price: 30, currency: "DH", image: "/images/plat/plat-mixte.png", ingredients: ["Poulet", "Viande hachée", "Frites", "Salade", "Sauce"] },
 
   // 🍕 Pizza
-  { id: "pizza-poulet", name: "Poulet", category: "Pizza", price: 25, currency: "DH", image: "/images/pizza/pizza-poulet.png", ingredients: ["Pâte", "Sauce tomate", "Poulet", "Mozzarella", "Poivrons", "Olives"] },
-  { id: "pizza-4-fromages", name: "4 Fromages", category: "Pizza", price: 30, currency: "DH", image: "/images/pizza/pizza-4-fromages.png", ingredients: ["Pâte", "Sauce tomate", "Mozzarella", "Gouda", "Emmental", "Chèvre"] },
-  { id: "pizza-thon", name: "Pizza Thon", category: "Pizza", price: 25, currency: "DH", image: "/images/pizza/pizza-thon.png", ingredients: ["Pâte", "Sauce tomate", "Thon", "Mozzarella", "Thym", "Huile d'olive"] },
+  { id: "pizza-poulet", name: "Poulet", category: "Pizza", price: 30, currency: "DH", image: "/images/pizza/pizza-poulet.png", ingredients: ["Pâte", "Sauce tomate", "Poulet", "Mozzarella", "Poivrons", "Olives"] },
+  { id: "pizza-4-fromages", name: "4 Fromages", category: "Pizza", price: 35, currency: "DH", image: "/images/pizza/pizza-4-fromages.png", ingredients: ["Pâte", "Sauce tomate", "Mozzarella", "Gouda", "Emmental", "Chèvre"] },
+  { id: "pizza-thon", name: "Pizza Thon", category: "Pizza", price: 30, currency: "DH", image: "/images/pizza/pizza-thon.png", ingredients: ["Pâte", "Sauce tomate", "Thon", "Mozzarella", "Thym", "Huile d'olive"] },
   { id: "pizza-fruit-de-mer", name: "Fruit de Mer", category: "Pizza", price: 35, currency: "DH", image: "/images/pizza/pizza-fruit-de-mer.png", featured: true, ingredients: ["Pâte", "Sauce tomate", "Crevettes", "Calamar", "Moules", "Mozzarella"] },
   { id: "pizza-margarita", name: "Margarita", category: "Pizza", price: 20, currency: "DH", image: "/images/pizza/pizza-margarita.png", ingredients: ["Pâte", "Sauce tomate", "Mozzarella", "Basilic", "Huile d'olive"] },
   { id: "pizza-4-saisons", name: "4 Saisons", category: "Pizza", price: 35, currency: "DH", image: "/images/pizza/pizza-4-saisons.png", ingredients: ["Pâte", "Sauce tomate", "Jambon", "Champignons", "Olives", "Poivrons", "Mozzarella"] },
@@ -95,7 +95,7 @@ export const products: Product[] = [
   { id: "panini-charcuterie", name: "Charcuterie", category: "Panini", price: 20, currency: "DH", image: "/images/panini/panini-charcuterie.png", ingredients: ["Pain panini", "Charcuterie", "Fromage", "Sauce"] },
   { id: "panini-thon", name: "Thon", category: "Panini", price: 15, currency: "DH", image: "/images/panini/panini-thon.png", ingredients: ["Pain panini", "Thon", "Fromage", "Sauce"] },
   { id: "panini-saucisse", name: "Saucisse", category: "Panini", price: 20, currency: "DH", image: "/images/panini/panini-saucisse.png", ingredients: ["Pain panini", "Saucisse", "Fromage", "Sauce"] },
-  { id: "panini-mixte", name: "Mixte", category: "Panini", price: 20, currency: "DH", image: "/images/panini/panini-mixte.png", ingredients: ["Pain panini", "Poulet", "Viande hachée", "Fromage", "Sauce"] },
+  { id: "panini-mixte", name: "Mixte", category: "Panini", price: 25, currency: "DH", image: "/images/panini/panini-mixte.png", ingredients: ["Pain panini", "Poulet", "Viande hachée", "Fromage", "Sauce"] },
   { id: "panini-nuggetes", name: "Nuggetes", category: "Panini", price: 20, currency: "DH", image: "/images/panini/panini-nuggetes.png", ingredients: ["Pain panini", "Nuggets de poulet", "Fromage", "Sauce"] },
 
   // 🌯 Tacos
