@@ -108,22 +108,6 @@ export function HeroSection({ featured }: { featured: Product[] }) {
           relation to how the image layer is sized or positioned. */}
       <div className="pointer-events-none absolute inset-0 z-20 flex flex-col justify-between px-4 py-14 sm:px-6 sm:py-16">
         <div className="flex flex-col items-center text-center">
-          <div className="h-64 overflow-hidden">
-            {!logoBroken ? (
-              <Image
-                src="/chefnahid.png"
-                alt="Logo Nahid Snack"
-                width={80}
-                height={80}
-                className="h-full w-full object-cover"
-                onError={() => setLogoBroken(true)}
-              />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center text-lg font-bold uppercase tracking-widest text-primary">
-                N
-              </div>
-            )}
-          </div>
 
           <h1 className="mt-4 text-4xl font-extrabold uppercase tracking-tight text-foreground sm:text-5xl">
             CHEF NAHID
