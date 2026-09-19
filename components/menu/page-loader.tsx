@@ -225,7 +225,7 @@ export function PageLoader() {
         <motion.p
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: INTRO_MS / 1000, duration: 0.6, ease: "easeOut" }}
+          transition={{ delay: INTRO_MS / 1400, duration: 0.6, ease: "easeOut" }}
           className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground"
         >
           BIENVENUE CHEZ CHEF NAHID
