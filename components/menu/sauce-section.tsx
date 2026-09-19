@@ -30,13 +30,7 @@ export function SauceSection() {
         </h2>
 
         {/* Bottle */}
-        <div className="relative mt-6 flex h-[22rem] w-full items-center justify-center sm:h-[26rem]">
-          {/* contact shadow on the floor, same as the drink carousel */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute bottom-4 h-8 w-1/2 rounded-[100%] blur-lg sm:h-10"
-            style={{ backgroundColor: "var(--shadow-color)" }}
-          />
+        <div className="relative mt-6 flex h-[22rem] w-full items-center justify-center sm:h-[26rem]"> 
           <Image
             src={SAUCE_IMAGE}
             alt="Bouteille de sauce piquante maison Chef Nahid"
