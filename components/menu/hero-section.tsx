@@ -65,9 +65,8 @@ export function HeroSection({ featured }: { featured: Product[] }) {
   return (
     <section ref={sectionRef} className="relative h-screen overflow-hidden bg-background">
 
-      <div className="hidden dark:block" style={{ width: '100%', height: '100vh', position: 'relative' }}>
+      <div className="hidden dark:block z-0" style={{ width: '100%', height: '100vh', position: 'relative' }}>
         <LightRays
-          z-index={-10}
           raysOrigin="top-center"
           raysColor="#ffffff"
           raysSpeed={1}
@@ -85,7 +84,7 @@ export function HeroSection({ featured }: { featured: Product[] }) {
       </div>
       {/* LAYER 1 — the image. Absolute, full-bleed, on its own. */}
       <motion.div
-        className="absolute inset-0 z-0 cursor-grab active:cursor-grabbing"
+        className="absolute inset-0 z-10 cursor-grab active:cursor-grabbing"
         style={{ willChange: "transform" }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
@@ -117,7 +116,7 @@ export function HeroSection({ featured }: { featured: Product[] }) {
                 fill
                 priority
                 sizes="100vw"
-                className="pointer-events-none select-none object-contain p-2 sm:p-6"
+                className="pointer-events-none select-none object-contain p-2 sm:p-6 z-0"
                 draggable={false}
               />
           </motion.div>
