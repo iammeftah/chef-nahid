@@ -31,6 +31,32 @@ export function FooterSection() {
         <p className="mt-0.5 text-[11px] uppercase tracking-wide text-muted-foreground">
           Tous les jours
         </p>
+
+        <span aria-hidden className="mx-auto mt-4 block h-px w-8 bg-border" />
+
+        <p className="mx-auto mt-4 max-w-[16rem] text-xs leading-relaxed text-muted-foreground">
+          Un petit creux tard le soir ? On est encore là jusqu'à{" "}
+          <span className="font-semibold text-foreground">4h du matin</span>.
+        </p>
+      </div>
+
+      {/* Delivery partner */}
+      <div className="mx-auto mt-4 max-w-sm border border-border px-3 py-5">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
+          Livraison
+        </span>
+        <div className="mt-3 flex items-center justify-center">
+          <Image
+            src="/images/glovo-seeklogo.svg"
+            alt="Glovo"
+            width={96}
+            height={32}
+            className="h-8 w-auto"
+          />
+        </div>
+        <p className="mt-2 text-[11px] uppercase tracking-wide text-muted-foreground">
+          Nous livrons avec Glovo
+        </p>
       </div>
 
       {/* QR code — white card so it stays scannable in dark mode */}
