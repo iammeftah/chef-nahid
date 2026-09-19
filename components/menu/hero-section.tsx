@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, type PanInfo } from "framer-motion";
 import type { Product } from "@/data/products";
+import { VideoText } from "../ui/video-text";
+import LightRays from "../LightRays";
 
 const SWIPE_THRESHOLD = 60;
 
@@ -62,6 +64,25 @@ export function HeroSection({ featured }: { featured: Product[] }) {
 
   return (
     <section ref={sectionRef} className="relative h-screen overflow-hidden bg-background">
+
+      <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+        <LightRays
+          z-index={-10}
+          raysOrigin="top-center"
+          raysColor="#ffffff"
+          raysSpeed={1}
+          lightSpread={0.5}
+          rayLength={3}
+          followMouse={true}
+          mouseInfluence={0}
+          noiseAmount={0}
+          distortion={0}
+          className="custom-rays"
+          pulsating={false}
+          fadeDistance={1}
+          saturation={1}
+      />
+      </div>
       {/* LAYER 1 — the image. Absolute, full-bleed, on its own. */}
       <motion.div
         className="absolute inset-0 z-0 cursor-grab active:cursor-grabbing"
@@ -108,9 +129,13 @@ export function HeroSection({ featured }: { featured: Product[] }) {
           relation to how the image layer is sized or positioned. */}
       <div className="pointer-events-none absolute inset-0 z-20 flex flex-col justify-between px-4 py-14 sm:px-6 sm:py-16">
         <div className="flex flex-col items-center text-center">
-          <h1 className="font-display text-7xl leading-tight text-foreground sm:text-6xl">
+          <VideoText
+            as="h1"
+            src="/hero-video.mp4"
+            className="font-display text-7xl md:text-9xl sm:text-8xl"
+          >
             Chef Nahid
-          </h1>
+          </VideoText>
           <p className="mx-auto mt-3 max-w-xs text-sm text-foreground sm:max-w-sm">
             Sandwichs, pizzas, jus &amp; douceurs faits maison — préparés à la commande, à Marrakech.
           </p>
