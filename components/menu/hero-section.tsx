@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, type PanInfo } from "framer-motion";
 import type { Product } from "@/data/products";
-import { DepthImage } from "./depth-image";
 
 const SWIPE_THRESHOLD = 60;
 
@@ -91,10 +90,7 @@ export function HeroSection({ featured }: { featured: Product[] }) {
             className="absolute inset-0"
             style={{ willChange: "transform, opacity" }}
           >
-            <DepthImage
-              className="absolute inset-0"
-            >
-              <Image
+            <Image
                 src={active.image}
                 alt={active.name}
                 fill
@@ -103,7 +99,6 @@ export function HeroSection({ featured }: { featured: Product[] }) {
                 className="pointer-events-none select-none object-contain p-2 sm:p-6"
                 draggable={false}
               />
-            </DepthImage>
           </motion.div>
         </AnimatePresence>
       </motion.div>

@@ -7,7 +7,7 @@ export function MenuExperience() {
   const featured = products.filter((product) => product.featured);
 
   return (
-    <div className="mx-auto flex max-w-2xl flex-col">
+    <div className="mx-auto flex flex-col">
       <HeroSection featured={featured} />
       {categories.map((category) => (
         <CategorySection
