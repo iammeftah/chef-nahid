@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, type PanInfo } from "framer-motion";
 import type { Product } from "@/data/products";
+import { DepthImage } from "./depth-image";
 
 const SWIPE_THRESHOLD = 60;
 
@@ -15,12 +16,15 @@ const SWIPE_THRESHOLD = 60;
  *   2. a gradient scrim (for legibility)
  *   3. the text (logo/title up top, caption/dots at the bottom), which uses
  *      its own internal flex layout but never touches the image's layout.
+ *
+ * Only a single image is rendered per slide (no blurred duplicate behind
+ * it) — that blur was the main thing making the drag feel laggy on phones,
+ * since large blurred layers are expensive to repaint every frame.
  */
 export function HeroSection({ featured }: { featured: Product[] }) {
+  const sectionRef = useRef<HTMLElement>(null);
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [logoBroken, setLogoBroken] = useState(false);
-
   // The very first image falls in from above the screen on page load, like
   // it's dropping out of the sky. Every later transition (swipe, dot tap)
   // uses the normal left/right slide instead. A ref (not state) so it never
@@ -47,14 +51,22 @@ export function HeroSection({ featured }: { featured: Product[] }) {
     else if (info.offset.x > SWIPE_THRESHOLD) goTo(index - 1, -1);
   };
 
+  const scrollToNext = () => {
+    sectionRef.current?.nextElementSibling?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   const active = featured[index];
   const showLandingAnimation = isInitialLoad.current && index === 0;
 
   return (
-    <section className="relative h-screen overflow-hidden bg-background">
+    <section ref={sectionRef} className="relative h-screen overflow-hidden bg-background">
       {/* LAYER 1 — the image. Absolute, full-bleed, on its own. */}
       <motion.div
         className="absolute inset-0 z-0 cursor-grab active:cursor-grabbing"
+        style={{ willChange: "transform" }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.15}
@@ -77,42 +89,34 @@ export function HeroSection({ featured }: { featured: Product[] }) {
                 : { duration: 0.4, ease: "easeInOut" }
             }
             className="absolute inset-0"
+            style={{ willChange: "transform, opacity" }}
           >
-            {/* soft blurred backdrop so the frame reads full-bleed without
-                cropping the actual product photo */}
-            <Image
-              src={active.image}
-              alt=""
-              aria-hidden
-              fill
-              className="pointer-events-none scale-125 select-none object-cover opacity-30 blur-3xl"
-              draggable={false}
-            />
-            {/* the real product photo — big, fully visible, never cropped */}
-            <Image
-              src={active.image}
-              alt={active.name}
-              fill
-              priority
-              className="pointer-events-none relative select-none object-contain p-2 drop-shadow-[0_35px_55px_rgba(0,0,0,0.55)] sm:p-6"
-              draggable={false}
-            />
+            <DepthImage
+              className="absolute inset-0"
+            >
+              <Image
+                src={active.image}
+                alt={active.name}
+                fill
+                priority
+                sizes="100vw"
+                className="pointer-events-none select-none object-contain p-2 sm:p-6"
+                draggable={false}
+              />
+            </DepthImage>
           </motion.div>
         </AnimatePresence>
       </motion.div>
 
-      {/* LAYER 2 — legibility scrim, independent of both the image and the text */}
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-background/90 via-background/30 to-background" />
 
       {/* LAYER 3 — the text. Its own flex column, top-to-bottom, with zero
           relation to how the image layer is sized or positioned. */}
       <div className="pointer-events-none absolute inset-0 z-20 flex flex-col justify-between px-4 py-14 sm:px-6 sm:py-16">
         <div className="flex flex-col items-center text-center">
-
-          <h1 className="mt-4 text-4xl font-extrabold uppercase tracking-tight text-foreground sm:text-5xl">
-            CHEF NAHID
+          <h1 className="font-display text-7xl leading-tight text-foreground sm:text-6xl">
+            Chef Nahid
           </h1>
-          <p className="mx-auto mt-3 max-w-xs text-sm text-black dark:text-white sm:max-w-sm">
+          <p className="mx-auto mt-3 max-w-xs text-sm text-foreground sm:max-w-sm">
             Sandwichs, pizzas, jus &amp; douceurs faits maison — préparés à la commande, à Marrakech.
           </p>
           <span className="mt-5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
@@ -120,20 +124,24 @@ export function HeroSection({ featured }: { featured: Product[] }) {
           </span>
         </div>
 
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex w-full flex-col items-center gap-4 sm:max-w-sm mx-auto">
           <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={active.id}
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
+              exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.25 }}
-              className="text-center"
+              className="flex max-w-sm w-full items-center justify-between gap-4 pt-3 "
             >
-              <h3 className="text-base font-semibold text-foreground">{active.name}</h3>
-              <div className="mt-1 flex items-baseline justify-center gap-1">
-                <span className="text-lg font-bold text-primary">{active.price}</span>
-                <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
+              <h3 className="font-display text-4xl leading-none text-foreground sm:text-3xl">
+                {active.name}
+              </h3>
+              <div className="flex shrink-0 items-baseline gap-1">
+                <span className="text-7xl font-semibold leading-none text-primary sm:text-3xl">
+                  {active.price}
+                </span>
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                   {active.currency}
                 </span>
               </div>
@@ -153,6 +161,28 @@ export function HeroSection({ featured }: { featured: Product[] }) {
               />
             ))}
           </div>
+
+          <button
+            type="button"
+            aria-label="Voir le menu"
+            onClick={scrollToNext}
+            className="pointer-events-auto flex flex-col items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <span className="text-[9px] font-semibold uppercase tracking-[0.2em]">
+              Voir le menu
+            </span>
+            <motion.svg
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <path d="M2 5L8 11L14 5" stroke="currentColor" strokeWidth="1.5" />
+            </motion.svg>
+          </button>
         </div>
       </div>
     </section>

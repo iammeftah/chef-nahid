@@ -56,7 +56,7 @@ export function MenuTile({
         />
       )}
 
-      <span className="absolute left-2 top-2 bg-black/70 px-1.5 py-0.5 text-[10px] font-medium tracking-widest text-muted-foreground">
+      <span className="absolute left-2 top-2 bg-white/10 px-1.5 py-0.5 text-[10px] font-medium tracking-widest text-black/50 dark:bg-black/80 dark:text-white/50">
         {String(index + 1).padStart(2, "0")}
       </span>
 
@@ -79,8 +79,8 @@ export function MenuTile({
 
             <h3
               className={cn(
-                "font-semibold leading-snug text-foreground",
-                large ? "text-lg" : "text-sm"
+                "font-display leading-snug text-white",
+                large ? "text-xl" : "text-base"
               )}
             >
               {product.name}
@@ -93,12 +93,12 @@ export function MenuTile({
             )}
 
             <div className="mt-1.5 flex items-end justify-between gap-3">
-              <span aria-hidden className="h-px flex-1 border-t border-dashed border-border" />
+              <span aria-hidden className="h-px flex-1 border-t border-dashed border-white/20" />
               <div className="shrink-0 text-right">
                 <span className={cn("font-bold text-primary", large ? "text-xl" : "text-base")}>
                   {product.price}
                 </span>
-                <span className="ml-1 text-[9px] font-medium uppercase tracking-wider text-muted-foreground">
+                <span className="ml-1 text-[9px] font-medium uppercase tracking-wider text-white/60">
                   {product.currency}
                 </span>
               </div>
@@ -119,17 +119,17 @@ export function MenuTile({
             transition={{ duration: 0.18 }}
             className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2 bg-black/90 p-4 text-center backdrop-blur-sm"
           >
-            <h3 className={cn("font-semibold text-foreground", large ? "text-lg" : "text-sm")}>
+            <h3 className={cn("font-display text-white", large ? "text-xl" : "text-base")}>
               {product.name}
             </h3>
-            <p className="text-xs leading-relaxed text-muted-foreground">
+            <p className="text-xs leading-relaxed text-white/70">
               {product.ingredients!.join(", ")}
             </p>
             <div className="mt-1">
               <span className={cn("font-bold text-primary", large ? "text-xl" : "text-base")}>
                 {product.price}
               </span>
-              <span className="ml-1 text-[9px] font-medium uppercase tracking-wider text-muted-foreground">
+              <span className="ml-1 text-[9px] font-medium uppercase tracking-wider text-white/60">
                 {product.currency}
               </span>
             </div>

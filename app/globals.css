@@ -9,7 +9,9 @@
   --primary: oklch(0.72 0.15 85);
   --primary-foreground: oklch(0.12 0 0);
   --radius: 0.25rem;
+  --shadow-color: oklch(0 0 0 / 35%);
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -19,11 +21,13 @@
     --border: oklch(1 0 0 / 12%);
     --primary: oklch(0.8 0.15 85);
     --primary-foreground: oklch(0.1 0 0);
+    --shadow-color: oklch(0 0 0 / 0%);
   }
 }
 
 @theme inline {
   --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted-foreground: var(--muted-foreground);

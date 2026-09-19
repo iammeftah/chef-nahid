@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, type PanInfo } from "framer-motion";
 import type { Product } from "@/data/products";
+import { DepthImage } from "./depth-image";
 
 const SWIPE_THRESHOLD = 50;
 
@@ -80,7 +81,7 @@ export function PizzaCarousel({ products }: { products: Product[] }) {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="flex flex-col items-center"
           >
-            <h3 className="text-lg font-semibold text-foreground">{product.name}</h3>
+            <h3 className="font-display text-xl text-foreground">{product.name}</h3>
             <div className="mt-1 flex items-baseline gap-1">
               <span className="text-xl font-bold text-primary">{product.price}</span>
               <span className="text-[10px] uppercase tracking-wider text-muted-foreground">

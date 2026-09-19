@@ -119,7 +119,7 @@ export const products: Product[] = [
   { id: "frites-mixte", name: "Frites Mixte", category: "Frites", price: 30, currency: "DH", image: "/images/frites/frites-mixte.png", ingredients: ["Frites", "Poulet", "Viande hachée", "Fromage fondu"] },
   { id: "frites-poulet", name: "Frites Poulet", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-poulet.png", ingredients: ["Frites", "Poulet", "Fromage fondu"] },
   { id: "frites-viande-hachee", name: "Frites Viande Hachée", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-viande-hachee.png", ingredients: ["Frites", "Viande hachée", "Fromage fondu"] },
-  { id: "cornet-de-frites", name: "Cornet de Frites", category: "Frites", price: 5, currency: "DH", image: "/images/frites/cornet-de-frites.png", ingredients: ["Frites", "Sel"] },
+  { id: "cornet-de-frites", name: "Cornet de Frites", category: "Frites", price: 7, currency: "DH", image: "/images/frites/cornet-de-frites.png", ingredients: ["Frites", "Sel"] },
 
   // 🥤 Jus
   { id: "jus-de-banane", name: "Jus de Banane", category: "Jus", price: 15, currency: "DH", image: "/images/jus/jus-de-banane.png", ingredients: ["Banane", "Lait", "Sucre"] },
@@ -188,14 +188,15 @@ export const products: Product[] = [
   { id: "pancake-fruits", name: "Pancake Fruits", category: "Pancake", price: 35, currency: "DH", image: "/images/pancake/pancake-fruits.png", ingredients: ["Pâte à pancake", "Fruits frais"] },
   { id: "pancake-caramel", name: "Pancake Caramel", category: "Pancake", price: 35, currency: "DH", image: "/images/pancake/pancake-caramel.png", ingredients: ["Pâte à pancake", "Caramel"] },
 
-  // ➕ Extra (add-ons — adjust names/prices as needed)
-  { id: "extra-chicken", name: "Chicken", category: "Extra", price: 15, currency: "DH", image: "/images/extra/placeholder.png", ingredients: ["Poulet grillé"] },
-  { id: "extra-cheese", name: "Cheese", category: "Extra", price: 10, currency: "DH", image: "/images/extra/placeholder.png", ingredients: ["Fromage"] },
-  { id: "extra-egg", name: "Egg", category: "Extra", price: 8, currency: "DH", image: "/images/extra/placeholder.png", ingredients: ["Œuf"] },
-  { id: "extra-mushrooms", name: "Mushrooms", category: "Extra", price: 10, currency: "DH", image: "/images/extra/placeholder.png", ingredients: ["Champignons"] },
-  { id: "extra-olives", name: "Olives", category: "Extra", price: 8, currency: "DH", image: "/images/extra/placeholder.png", ingredients: ["Olives"] },
-  { id: "extra-sauce", name: "Extra Sauce", category: "Extra", price: 5, currency: "DH", image: "/images/extra/placeholder.png", ingredients: ["Sauce au choix"] },
-  { id: "extra-avocado", name: "Avocado", category: "Extra", price: 12, currency: "DH", image: "/images/extra/placeholder.png", ingredients: ["Avocat"] },
+  // ➕ Extra (add-ons)
+  { id: "extra-viande-hachee", name: "Viande Hachée", category: "Extra", price: 10, currency: "DH", image: "/images/extra/extra-viande-hachee.png", ingredients: ["Viande hachée"] },
+  { id: "extra-chicken", name: "Chicken", category: "Extra", price: 10, currency: "DH", image: "/images/extra/extra-chicken.png", ingredients: ["Poulet"] },
+  { id: "extra-sepia", name: "Sepia", category: "Extra", price: 10, currency: "DH", image: "/images/extra/extra-sepia.png", ingredients: ["Sépia"] },
+  { id: "extra-crevette", name: "Crevette", category: "Extra", price: 10, currency: "DH", image: "/images/extra/extra-crevette.png", ingredients: ["Crevette"] },
+  { id: "extra-fromage", name: "Fromage", category: "Extra", price: 5, currency: "DH", image: "/images/extra/extra-fromage.png", ingredients: ["Fromage"] },
+  { id: "extra-thon", name: "Thon", category: "Extra", price: 7, currency: "DH", image: "/images/extra/extra-thon.png", ingredients: ["Thon"] },
+  { id: "extra-egg", name: "Egg", category: "Extra", price: 3, currency: "DH", image: "/images/extra/extra-egg.png", ingredients: ["Œuf"] },
+  { id: "extra-lanchun", name: "Lanchun", category: "Extra", price: 5, currency: "DH", image: "/images/extra/extra-lanchun.png", ingredients: ["Lanchun"] },
 ];
 
 export const categories: ProductCategory[] = [

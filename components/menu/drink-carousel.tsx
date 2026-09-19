@@ -61,17 +61,22 @@ export function DrinkCarousel({ products }: { products: Product[] }) {
             className="flex w-full shrink-0 snap-center flex-col items-center px-4 sm:px-6 "
           >
             <div className="relative flex h-[26rem] w-full max-w-sm items-center justify-center sm:h-[30rem]">
-              {/* decorative glow behind the drink */}
+              {/* contact shadow — sits behind the image, on the floor */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute bottom-6 h-8 w-1/2 rounded-[100%] blur-lg sm:h-10"
+                style={{ backgroundColor: "var(--shadow-color)" }}
+              />
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
-                className="pointer-events-none relative select-none object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.45)]"
+                className="pointer-events-none relative select-none object-contain"
                 draggable={false}
               />
             </div>
             <div className="mt-2 text-center">
-              <h3 className="text-xl font-semibold text-foreground">{product.name}</h3>
+              <h3 className="font-display text-2xl text-foreground">{product.name}</h3>
               <div className="mt-1 flex items-baseline justify-center gap-1">
                 <span className="text-2xl font-bold text-primary">{product.price}</span>
                 <span className="text-xs uppercase tracking-wider text-muted-foreground">
