@@ -65,7 +65,7 @@ export function HeroSection({ featured }: { featured: Product[] }) {
   return (
     <section ref={sectionRef} className="relative h-screen overflow-hidden bg-background">
 
-      <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+      <div className="hidden dark:block" style={{ width: '100%', height: '100vh', position: 'relative' }}>
         <LightRays
           z-index={-10}
           raysOrigin="top-center"

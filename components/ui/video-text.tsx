@@ -5,11 +5,12 @@ import React, {
   useEffect,
   useRef,
   useState,
-  type ElementType,
   type ReactNode,
 } from "react"
 
 import { cn } from "@/lib/utils"
+
+type Tag = "div" | "h1" | "h2" | "h3" | "p" | "span"
 
 export interface VideoTextProps {
   /** Video URL. Files in /public are served from the root: "/hero-video.mp4" */
@@ -22,7 +23,7 @@ export interface VideoTextProps {
   preload?: "auto" | "metadata" | "none"
   children: ReactNode
   /** Element to render, e.g. "h1" */
-  as?: ElementType
+  as?: Tag
   /**
    * Extra room around the text (in em) so script-font swashes and
    * ascenders/descenders aren't clipped. Raise it if edges still get cut.

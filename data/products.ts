@@ -94,7 +94,6 @@ export const products: Product[] = [
   { id: "panini-poulet", name: "Poulet", category: "Panini", price: 20, currency: "DH", image: "/images/panini/panini-poulet.png", ingredients: ["Pain panini", "Poulet", "Fromage", "Sauce"] },
   { id: "panini-charcuterie", name: "Charcuterie", category: "Panini", price: 20, currency: "DH", image: "/images/panini/panini-charcuterie.png", ingredients: ["Pain panini", "Charcuterie", "Fromage", "Sauce"] },
   { id: "panini-thon", name: "Thon", category: "Panini", price: 15, currency: "DH", image: "/images/panini/panini-thon.png", ingredients: ["Pain panini", "Thon", "Fromage", "Sauce"] },
-  { id: "panini-saucisse", name: "Saucisse", category: "Panini", price: 20, currency: "DH", image: "/images/panini/panini-saucisse.png", ingredients: ["Pain panini", "Saucisse", "Fromage", "Sauce"] },
   { id: "panini-mixte", name: "Mixte", category: "Panini", price: 25, currency: "DH", image: "/images/panini/panini-mixte.png", ingredients: ["Pain panini", "Poulet", "Viande hachée", "Fromage", "Sauce"] },
   { id: "panini-nuggetes", name: "Nuggetes", category: "Panini", price: 20, currency: "DH", image: "/images/panini/panini-nuggetes.png", ingredients: ["Pain panini", "Nuggets de poulet", "Fromage", "Sauce"] },
 
