@@ -42,20 +42,26 @@ export function PizzaCarousel({ products }: { products: Product[] }) {
       className="relative flex flex-col items-center px-4 py-6 sm:px-6"
     >
       <motion.div
-        className="relative h-[26rem] w-full max-w-md cursor-grab active:cursor-grabbing sm:h-[32rem] sm:max-w-lg"
+        className="relative aspect-square w-full max-w-md cursor-grab active:cursor-grabbing sm:max-w-lg"
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0}
         onDragEnd={handleDragEnd}
       >
-        <AnimatePresence initial={false} custom={direction} mode="wait">
+        <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={product.id}
             custom={direction}
             initial={{ opacity: 0, rotate: direction >= 0 ? 30 : -30 }}
             animate={{ opacity: 1, rotate: 0 }}
-            exit={{ opacity: 0, rotate: direction >= 0 ? -30 : 30 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            exit={{
+              opacity: 0,
+              rotate: direction >= 0 ? -30 : 30,
+              // starts fading a bit later, so the pizza underneath never dips
+              // while the new one is still fading in on top
+              transition: { duration: 0.45, ease: "easeInOut", opacity: { duration: 0.35, delay: 0.1 } },
+            }}
+            transition={{ duration: 0.45, ease: "easeInOut" }}
             className="absolute inset-0"
           >
             <Image
@@ -64,22 +70,23 @@ export function PizzaCarousel({ products }: { products: Product[] }) {
               fill
               sizes="(max-width: 640px) 90vw, 32rem"
               className="pointer-events-none select-none object-contain"
+              style={{ transform: `scale(${product.imageScale ?? 1})` }}
               draggable={false}
             />
           </motion.div>
         </AnimatePresence>
       </motion.div>
 
-      <div className="relative mt-4 w-full max-w-sm overflow-hidden text-center">
-        <AnimatePresence initial={false} custom={direction} mode="wait">
+      <div className="relative mt-4 grid w-full max-w-sm overflow-hidden text-center">
+        <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={product.id}
             custom={direction}
             initial={{ opacity: 0, x: direction >= 0 ? 40 : -40 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: direction >= 0 ? -40 : 40 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="flex flex-col items-center"
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="col-start-1 row-start-1 flex flex-col items-center"
           >
             <h3 className="font-display text-xl text-foreground">{product.name}</h3>
             <div className="mt-1 flex items-baseline gap-1">

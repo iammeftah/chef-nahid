@@ -137,7 +137,7 @@ export function HeroSection({ featured }: { featured: Product[] }) {
             Chef Nahid
           </VideoText>
           <p className="mx-auto mt-3 max-w-xs text-sm text-foreground sm:max-w-sm">
-            Sandwichs, pizzas, jus &amp; douceurs faits maison — préparés à la commande, à Marrakech.
+            Sandwichs, pizzas, jus &amp; douceurs faits maison.
           </p>
           <span className="mt-5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
             Nos coups de cœur

@@ -17,7 +17,7 @@ export function FooterSection() {
         Chef Nahid
       </h2>
       <p className="mx-auto mt-2 max-w-xs text-sm text-muted-foreground">
-        Sandwichs, pizzas, jus &amp; douceurs faits maison — préparés à la commande.
+        Sandwichs, pizzas, jus &amp; douceurs faits maison.
       </p>
 
       <span className="mx-auto mt-6 block h-px w-12 bg-primary" aria-hidden />
@@ -59,24 +59,6 @@ export function FooterSection() {
         </p>
       </div>
 
-      {/* QR code — white card so it stays scannable in dark mode */}
-      <div className="mx-auto mt-8 flex max-w-sm flex-col items-center">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
-          Partagez le menu
-        </span>
-        <div className="mt-3 bg-white p-3">
-          <Image
-            src="/adobe-express-qr-code.svg"
-            alt="QR code du menu Chef Nahid"
-            width={160}
-            height={160}
-            className="h-40 w-40"
-          />
-        </div>
-        <p className="mt-3 max-w-[16rem] text-xs leading-relaxed text-muted-foreground">
-          Faites scanner ce code à vos amis pour qu'ils découvrent le menu.
-        </p>
-      </div>
 
       {/* Back to top */}
       <button

@@ -3,6 +3,8 @@ import { HeroSection } from "./hero-section";
 import { CategorySection } from "./category-section";
 import { FooterSection } from "./footer-section";
 import { PageLoader } from "./page-loader";
+import { SauceSection } from "./sauce-section";
+import { QrDrawer } from "./qr-drawer";
 
 export function MenuExperience() {
   const featured = products.filter((product) => product.featured);
@@ -10,7 +12,9 @@ export function MenuExperience() {
   return (
     <div className="mx-auto flex flex-col">
       <PageLoader />
+      <QrDrawer />
       <HeroSection featured={featured} />
+      <SauceSection />
       {categories.map((category) => (
         <CategorySection
           key={category}

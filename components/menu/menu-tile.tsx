@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -8,24 +8,73 @@ import type { Product } from "@/data/products";
 
 type RevealLevel = "caption" | "ingredients" | null;
 
+const LONG_PRESS_MS = 450; // how long to hold before ingredients show
+const MOVE_TOLERANCE = 10; // px of finger movement before it counts as a scroll
+
 export function MenuTile({
   product,
   index,
   large = false,
   revealLevel = null,
-  onToggle,
+  onTap,
+  onLongPress,
 }: {
   product: Product;
   index: number;
   large?: boolean;
   revealLevel?: RevealLevel;
-  onToggle?: () => void;
+  onTap?: () => void;
+  onLongPress?: () => void;
 }) {
   const [broken, setBroken] = useState(false);
   const hasIngredients = Boolean(product.ingredients && product.ingredients.length > 0);
 
-  // Tiles with no ingredients have nothing to progressively reveal, so
-  // their name/price bar is always on and they aren't interactive.
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const startRef = useRef<{ x: number; y: number } | null>(null);
+  const longPressedRef = useRef(false);
+
+  const clearPress = () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = null;
+    startRef.current = null;
+  };
+
+  // no stray timer if the tile unmounts mid-press
+  useEffect(() => clearPress, []);
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    if (!hasIngredients) return;
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+
+    longPressedRef.current = false;
+    startRef.current = { x: e.clientX, y: e.clientY };
+    timerRef.current = setTimeout(() => {
+      timerRef.current = null;
+      longPressedRef.current = true;
+      navigator.vibrate?.(15); // small haptic tick where supported
+      onLongPress?.();
+    }, LONG_PRESS_MS);
+  };
+
+  // finger moved too far: the user is scrolling, not pressing
+  const handlePointerMove = (e: React.PointerEvent) => {
+    const start = startRef.current;
+    if (!start) return;
+    if (Math.hypot(e.clientX - start.x, e.clientY - start.y) > MOVE_TOLERANCE) clearPress();
+  };
+
+  const handleClick = () => {
+    if (!hasIngredients) return;
+    // the click that follows a long press must not also count as a tap
+    if (longPressedRef.current) {
+      longPressedRef.current = false;
+      return;
+    }
+    onTap?.();
+  };
+
+  // Tiles with no ingredients have nothing to reveal, so their name/price
+  // bar is always on and they aren't interactive.
   const showCaption = !hasIngredients || revealLevel === "caption" || revealLevel === "ingredients";
   const showIngredientsPanel = hasIngredients && revealLevel === "ingredients";
 
@@ -37,9 +86,15 @@ export function MenuTile({
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.3, delay: Math.min(index, 6) * 0.04, ease: "easeOut" }}
       whileTap={{ scale: 0.97 }}
-      onClick={() => hasIngredients && onToggle?.()}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={clearPress}
+      onPointerCancel={clearPress}
+      onPointerLeave={clearPress}
+      onContextMenu={(e) => e.preventDefault()}
+      onClick={handleClick}
       className={cn(
-        "group relative overflow-hidden border border-border bg-background transition-colors duration-200 hover:border-primary",
+        "group relative select-none overflow-hidden border border-border bg-background transition-colors duration-200 hover:border-primary [-webkit-touch-callout:none]",
         hasIngredients && "cursor-pointer",
         "aspect-square",
         large && "col-span-2 row-span-2"
@@ -51,7 +106,8 @@ export function MenuTile({
           alt={product.name}
           fill
           sizes="(max-width: 640px) 50vw, 33vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+          className="pointer-events-none select-none object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+          draggable={false}
           onError={() => setBroken(true)}
         />
       )}
@@ -60,8 +116,8 @@ export function MenuTile({
         {String(index + 1).padStart(2, "0")}
       </span>
 
-      {/* Name / price bar — hidden by default for tiles with ingredients,
-          revealed on the first tap. Always on for tiles without ingredients. */}
+      {/* Name / price bar: hidden by default for tiles with ingredients,
+          shown on tap, hidden again on the next tap. */}
       <AnimatePresence>
         {showCaption && (
           <motion.div
@@ -88,7 +144,7 @@ export function MenuTile({
 
             {hasIngredients && (
               <span className="mt-0.5 block text-[10px] font-medium uppercase tracking-wide text-primary/90">
-                Voir les ingrédients
+                Maintenir pour les ingrédients
               </span>
             )}
 
@@ -107,9 +163,8 @@ export function MenuTile({
         )}
       </AnimatePresence>
 
-      {/* Full ingredient list, covering the whole tile so nothing gets
-          clipped with "...". Shown on the second tap; a third tap, or a
-          click anywhere else, collapses everything back to just the image. */}
+      {/* Full ingredient list, shown on long press. A tap on it (or anywhere
+          else on the page) collapses everything back to just the image. */}
       <AnimatePresence>
         {showIngredientsPanel && (
           <motion.div

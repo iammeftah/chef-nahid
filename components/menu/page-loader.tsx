@@ -228,7 +228,7 @@ export function PageLoader() {
           transition={{ delay: INTRO_MS / 1400, duration: 0.6, ease: "easeOut" }}
           className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground"
         >
-          BIENVENUE CHEZ CHEF NAHID
+          BIENVENUE CHEZ
         </motion.p>
       </motion.div>
 
