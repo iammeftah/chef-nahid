@@ -61,12 +61,6 @@ export function DrinkCarousel({ products }: { products: Product[] }) {
             className="flex w-full shrink-0 snap-center flex-col items-center px-4 sm:px-6 "
           >
             <div className="relative flex h-[26rem] w-full max-w-sm items-center justify-center sm:h-[30rem]">
-              {/* contact shadow — sits behind the image, on the floor */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute bottom-6 h-8 w-1/2 rounded-[100%] blur-lg sm:h-10"
-                style={{ backgroundColor: "var(--shadow-color)" }}
-              />
               <Image
                 src={product.image}
                 alt={product.name}
