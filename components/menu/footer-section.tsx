@@ -23,7 +23,7 @@ export function FooterSection() {
       <span className="mx-auto mt-6 block h-px w-12 bg-primary" aria-hidden />
 
       {/* Hours */}
-      <div className="mx-auto mt-6 max-w-sm border border-border px-3 py-5">
+      <div className=" mx-auto mt-6 max-w-sm border border-border px-3 py-5">
         <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
           Horaires
         </span>

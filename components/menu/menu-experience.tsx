@@ -5,6 +5,7 @@ import { FooterSection } from "./footer-section";
 import { PageLoader } from "./page-loader";
 import { SauceSection } from "./sauce-section";
 import { QrDrawer } from "./qr-drawer";
+import { FallingFries } from "./falling-fries";
 
 export function MenuExperience() {
   const featured = products.filter((product) => product.featured);
@@ -13,6 +14,7 @@ export function MenuExperience() {
     <div className="mx-auto flex flex-col">
       <PageLoader />
       <QrDrawer />
+      <FallingFries />
       <HeroSection featured={featured} />
       <SauceSection />
       {categories.map((category) => (
