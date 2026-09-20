@@ -3,6 +3,16 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+// ---- LOCATION -------------------------------------------------------------
+const LAT = 31.673725782227308;
+const LNG = -8.014955557818556;
+const MAP_ZOOM = 16;
+const MAP_IMG = `/sketchmap.png`;
+const DIRECTIONS_URL = `https://www.google.com/maps?q=${LAT},${LNG}`;
+// ---------------------------------------------------------------------------
+
+
+
 export function FooterSection() {
   return (
     <motion.footer
@@ -12,6 +22,7 @@ export function FooterSection() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="border-t border-border px-4 pb-8 pt-14 text-center sm:px-6"
     >
+
       {/* Brand — same treatment as the hero */}
       <h2 className="font-display text-6xl leading-tight text-foreground sm:text-5xl">
         Chef Nahid
@@ -59,6 +70,72 @@ export function FooterSection() {
         </p>
       </div>
 
+      {/* Location — custom-styled map, not a plain Google Maps embed */}
+      <div className="mx-auto mt-4 max-w-sm border border-border px-3 py-5">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
+          Localisation
+        </span>
+        <p className="mt-2 text-sm font-semibold text-foreground">Marrakech, Maroc</p>
+        <p className="mt-0.5 text-[10px] uppercase tracking-wide text-muted-foreground">
+          {LAT.toFixed(6)}, {LNG.toFixed(6)}
+        </p>
+
+        <a
+          href={DIRECTIONS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative mx-auto mt-4 block h-40 w-full overflow-hidden rounded-lg border border-border"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={MAP_IMG}
+            alt="Localisation Chef Nahid sur la carte"
+            draggable={false}
+            className="h-full w-full select-none object-cover transition-transform duration-300 group-hover:scale-105"
+            style={{
+              filter:
+                "grayscale(1) invert(92%) contrast(0.92) brightness(0.92) hue-rotate(180deg) saturate(1.4)",
+            }}
+          />
+
+          {/* brand-color tint over the desaturated tiles */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(circle at 50% 45%, rgba(230,57,70,0.16), transparent 55%), linear-gradient(160deg, rgba(42,157,143,0.20), rgba(18,16,20,0.35))",
+              mixBlendMode: "multiply",
+            }}
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 shadow-[inset_0_0_0_1px_rgba(244,239,233,0.25)]"
+          />
+
+          {/* pulsing pin, centered on the map's exact coordinates */}
+          <div aria-hidden className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full">
+            <svg
+              width="22"
+              height="30"
+              viewBox="0 0 22 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="relative drop-shadow-[0_2px_3px_rgba(0,0,0,0.6)]"
+            >
+              <path
+                d="M11 0C4.9 0 0 4.9 0 11c0 8.25 11 19 11 19s11-10.75 11-19C22 4.9 17.1 0 11 0z"
+                fill="var(--primary, #e63946)"
+              />
+              <circle cx="11" cy="11" r="4.2" fill="#fff2ee" />
+            </svg>
+          </div>
+
+          <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-2 py-1 text-left text-[9px] font-bold uppercase tracking-wider text-white">
+            Voir l&apos;itinéraire
+          </span>
+        </a>
+      </div>
 
       {/* Back to top */}
       <button

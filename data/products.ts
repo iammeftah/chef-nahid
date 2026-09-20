@@ -69,7 +69,7 @@ export const products: Product[] = [
   { id: "sandwich-poulet-crispy", name: "Sandwich Poulet ou Crispy", category: "Sandwich", price: 20, currency: "DH", image: "/images/sandwich/sandwich-poulet-crispy.png", ingredients: ["Pain", "Poulet grillé ou crispy", "Salade", "Tomate", "Sauce"] },
   { id: "sandwich-viande-hachee", name: "Sandwich Viande Hachée", category: "Sandwich", price: 20, currency: "DH", image: "/images/sandwich/sandwich-viande-hachee.png", ingredients: ["Pain", "Viande hachée", "Salade", "Tomate", "Sauce"] },
   { id: "sandwich-mixte", name: "Sandwich Mixte", category: "Sandwich", price: 25, currency: "DH", image: "/images/sandwich/sandwich-mixte.png", ingredients: ["Pain", "Poulet", "Viande hachée", "Salade", "Tomate", "Sauce"] },
-  { id: "bocadillos", name: "Bocadillos", category: "Sandwich", price: 12, currency: "DH", image: "/images/sandwich/bocadillos.png", ingredients: ["Pain bocadillo", "Charcuterie", "Fromage", "Salade"] },
+  { id: "bocadillos", name: "Bocadillos", category: "Sandwich", price: 15, currency: "DH", image: "/images/sandwich/bocadillos.png", ingredients: ["Pain bocadillo", "Charcuterie", "Fromage", "Salade"] },
   { id: "tortia", name: "Tortia", category: "Sandwich", price: 15, currency: "DH", image: "/images/sandwich/tortia.png", ingredients: ["Tortilla", "Poulet ou viande", "Salade", "Fromage", "Sauce"] },
   { id: "sandwich-thon", name: "Sandwich Thon", category: "Sandwich", price: 15, currency: "DH", image: "/images/sandwich/sandwich-thon.png", ingredients: ["Pain", "Thon", "Olives", "Tomate", "Oignon", "Mayonnaise"] },
 
