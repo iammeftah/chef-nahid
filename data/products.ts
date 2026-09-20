@@ -74,10 +74,10 @@ export const products: Product[] = [
   { id: "sandwich-thon", name: "Sandwich Thon", category: "Sandwich", price: 15, currency: "DH", image: "/images/sandwich/sandwich-thon.png", ingredients: ["Pain", "Thon", "Olives", "Tomate", "Oignon", "Mayonnaise"] },
 
   // 🍽️ Plat (Version Plat)
-  { id: "plat-sepia", name: "Plat Sepia", category: "Plat", price: 25, currency: "DH", image: "/images/plat/plat-sepia.png", ingredients: ["Sépia panée", "Frites", "Salade", "Sauce"] },
-  { id: "plat-poulet", name: "Plat Poulet", category: "Plat", price: 25, currency: "DH", image: "/images/plat/plat-poulet.png", ingredients: ["Poulet grillé", "Frites", "Salade", "Sauce"] },
-  { id: "plat-viande-hachee", name: "Plat Viande Hachée", category: "Plat", price: 25, currency: "DH", image: "/images/plat/plat-viande-hachee.png", ingredients: ["Viande hachée", "Frites", "Salade", "Sauce"] },
-  { id: "plat-mixte", name: "Plat Mixte", category: "Plat", price: 30, currency: "DH", image: "/images/plat/plat-mixte.png", ingredients: ["Poulet", "Viande hachée", "Frites", "Salade", "Sauce"] },
+  { id: "plat-sepia", name: "Plat Sepia", category: "Plat", price: 30, currency: "DH", image: "/images/plat/plat-sepia.png", ingredients: ["Sépia panée", "Frites", "Salade", "Sauce"] },
+  { id: "plat-poulet", name: "Plat Poulet", category: "Plat", price: 30, currency: "DH", image: "/images/plat/plat-poulet.png", ingredients: ["Poulet grillé", "Frites", "Salade", "Sauce"] },
+  { id: "plat-viande-hachee", name: "Plat Viande Hachée", category: "Plat", price: 30, currency: "DH", image: "/images/plat/plat-viande-hachee.png", ingredients: ["Viande hachée", "Frites", "Salade", "Sauce"] },
+  { id: "plat-mixte", name: "Plat Mixte", category: "Plat", price: 35, currency: "DH", image: "/images/plat/plat-mixte.png", ingredients: ["Poulet", "Viande hachée", "Frites", "Salade", "Sauce"] },
 
   // 🍕 Pizza
   { id: "pizza-poulet", name: "Poulet", category: "Pizza", price: 30, currency: "DH", image: "/images/pizza/pizza-poulet.png", ingredients: ["Pâte", "Sauce tomate", "Poulet", "Mozzarella", "Poivrons", "Olives"] },
