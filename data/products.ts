@@ -54,24 +54,24 @@ export interface Product {
 export const products: Product[] = [
   // 🍔 Burger
   { id: "cheese-burger", name: "Cheese Burger", category: "Burger", price: 35, currency: "DH", image: "/images/burger/cheese-burger.png", ingredients: ["Pain burger", "Steak haché", "Cheddar", "Salade", "Tomate", "Oignon", "Sauce burger"] },
-  { id: "crispy-burger", name: "Crispy Burger", category: "Burger", price: 35, currency: "DH", image: "/images/burger/crispy-burger.png", ingredients: ["Pain burger", "Poulet crispy", "Salade", "Tomate", "Sauce fromagère"] },
+  { id: "crispy-burger", name: "Crispy Burger", category: "Burger", price: 35, currency: "DH", image: "/images/burger/crispy-burger.png", ingredients: ["Pain burger", "Poulet crispy", "Salade", "Tomate", "Sauce burger"] },
   { id: "double-cheese-burger", name: "Double Cheese Burger", category: "Burger", price: 55, currency: "DH", image: "/images/burger/double-cheese-burger.png", featured: true, ingredients: ["Pain burger", "Double steak haché", "Double cheddar", "Salade", "Tomate", "Oignon", "Sauce burger"] },
-  { id: "fish-burger", name: "Fish Burger", category: "Burger", price: 45, currency: "DH", image: "/images/burger/fish-burger.png", ingredients: ["Pain burger", "Filet de poisson pané", "Salade", "Sauce tartare", "Citron"] },
+  { id: "fish-burger", name: "Fish Burger", category: "Burger", price: 45, currency: "DH", image: "/images/burger/fish-burger.png", ingredients: ["Pain burger", "Filet de poisson pané", "Salade", "Sauce tartare"] },
 
   // 🍲 Pasticcio
-  { id: "pasticcio-poulet", name: "Pasticcio Poulet", category: "Pasticcio", price: 30, currency: "DH", image: "/images/pasticcio/pasticcio-poulet.png", ingredients: ["Pâte feuilletée", "Poulet effiloché", "Béchamel", "Fromage", "Épices"] },
-  { id: "pasticcio-charcutrie", name: "Pasticcio Charcutrie", category: "Pasticcio", price: 30, currency: "DH", image: "/images/pasticcio/pasticcio-charcutrie.png", ingredients: ["Pâte feuilletée", "Charcuterie", "Béchamel", "Fromage"] },
-  { id: "pasticcio-viande-hachee", name: "Pasticcio Viande Hachée", category: "Pasticcio", price: 35, currency: "DH", image: "/images/pasticcio/pasticcio-viande-hachee.png", ingredients: ["Pâte feuilletée", "Viande hachée", "Béchamel", "Fromage", "Oignon"] },
-  { id: "pasticcio-mixte", name: "Pasticcio Mixte", category: "Pasticcio", price: 40, currency: "DH", image: "/images/pasticcio/pasticcio-mixte.png", ingredients: ["Pâte feuilletée", "Poulet", "Viande hachée", "Béchamel", "Fromage"] },
+  { id: "pasticcio-poulet", name: "Pasticcio Poulet", category: "Pasticcio", price: 30, currency: "DH", image: "/images/pasticcio/pasticcio-poulet.png", ingredients: ["Pâte pennée", "Poulet effiloché", "Béchamel", "Fromage", "Épices"] },
+  { id: "pasticcio-charcutrie", name: "Pasticcio Charcutrie", category: "Pasticcio", price: 30, currency: "DH", image: "/images/pasticcio/pasticcio-charcutrie.png", ingredients: ["Pâte pennée", "Charcuterie", "Béchamel", "Fromage"] },
+  { id: "pasticcio-viande-hachee", name: "Pasticcio Viande Hachée", category: "Pasticcio", price: 35, currency: "DH", image: "/images/pasticcio/pasticcio-viande-hachee.png", ingredients: ["Pâte pennée", "Viande hachée", "Béchamel", "Fromage", "Oignon"] },
+  { id: "pasticcio-mixte", name: "Pasticcio Mixte", category: "Pasticcio", price: 40, currency: "DH", image: "/images/pasticcio/pasticcio-mixte.png", ingredients: ["Pâte pennée", "Poulet", "Viande hachée", "Béchamel", "Fromage"] },
 
   // 🥖 Sandwich
-  { id: "sandwich-sepia", name: "Sandwich Sepia", category: "Sandwich", price: 20, currency: "DH", image: "/images/sandwich/sandwich-sepia.png", ingredients: ["Pain", "Sépia panée", "Salade", "Tomate", "Sauce"] },
-  { id: "sandwich-poulet-crispy", name: "Sandwich Poulet ou Crispy", category: "Sandwich", price: 20, currency: "DH", image: "/images/sandwich/sandwich-poulet-crispy.png", ingredients: ["Pain", "Poulet grillé ou crispy", "Salade", "Tomate", "Sauce"] },
-  { id: "sandwich-viande-hachee", name: "Sandwich Viande Hachée", category: "Sandwich", price: 20, currency: "DH", image: "/images/sandwich/sandwich-viande-hachee.png", ingredients: ["Pain", "Viande hachée", "Salade", "Tomate", "Sauce"] },
-  { id: "sandwich-mixte", name: "Sandwich Mixte", category: "Sandwich", price: 25, currency: "DH", image: "/images/sandwich/sandwich-mixte.png", ingredients: ["Pain", "Poulet", "Viande hachée", "Salade", "Tomate", "Sauce"] },
-  { id: "bocadillos", name: "Bocadillos", category: "Sandwich", price: 15, currency: "DH", image: "/images/sandwich/bocadillos.png", ingredients: ["Pain bocadillo", "Charcuterie", "Fromage", "Salade"] },
-  { id: "tortia", name: "Tortia", category: "Sandwich", price: 15, currency: "DH", image: "/images/sandwich/tortia.png", ingredients: ["Tortilla", "Poulet ou viande", "Salade", "Fromage", "Sauce"] },
-  { id: "sandwich-thon", name: "Sandwich Thon", category: "Sandwich", price: 15, currency: "DH", image: "/images/sandwich/sandwich-thon.png", ingredients: ["Pain", "Thon", "Olives", "Tomate", "Oignon", "Mayonnaise"] },
+  { id: "sandwich-sepia", name: "Sandwich Sepia", category: "Sandwich", price: 20, currency: "DH", image: "/images/sandwich/sandwich-sepia.png", ingredients: ["Pain", "Sépia panée", "Salade", "Sauce"] },
+  { id: "sandwich-poulet-crispy", name: "Sandwich Poulet ou Crispy", category: "Sandwich", price: 20, currency: "DH", image: "/images/sandwich/sandwich-poulet-crispy.png", ingredients: ["Pain", "Poulet grillé ou crispy", "Salade", "Sauce"] },
+  { id: "sandwich-viande-hachee", name: "Sandwich Viande Hachée", category: "Sandwich", price: 20, currency: "DH", image: "/images/sandwich/sandwich-viande-hachee.png", ingredients: ["Pain", "Viande hachée", "Salade", "Sauce"] },
+  { id: "sandwich-mixte", name: "Sandwich Mixte", category: "Sandwich", price: 25, currency: "DH", image: "/images/sandwich/sandwich-mixte.png", ingredients: ["Pain", "Poulet", "Viande hachée", "Salade", "Sauce"] },
+  { id: "bocadillos", name: "Bocadillos", category: "Sandwich", price: 15, currency: "DH", image: "/images/sandwich/bocadillos.png", ingredients: ["Pain", "Thon", "Salade", "Oeuf", "Lanchun", "Fromage" , "Frites"] },
+  { id: "tortia", name: "Tortia", category: "Sandwich", price: 15, currency: "DH", image: "/images/sandwich/tortia.png", ingredients: ["Oeuf", "Salade", "Fromage", "Sauce"] },
+  { id: "sandwich-thon", name: "Sandwich Thon", category: "Sandwich", price: 15, currency: "DH", image: "/images/sandwich/sandwich-thon.png", ingredients: ["Pain", "Thon", "Salade", "Sauce"] },
 
   // 🍽️ Plat (Version Plat)
   { id: "plat-sepia", name: "Plat Sepia", category: "Plat", price: 30, currency: "DH", image: "/images/plat/plat-sepia.png", ingredients: ["Sépia panée", "Frites", "Salade", "Sauce"] },
@@ -80,30 +80,29 @@ export const products: Product[] = [
   { id: "plat-mixte", name: "Plat Mixte", category: "Plat", price: 35, currency: "DH", image: "/images/plat/plat-mixte.png", ingredients: ["Poulet", "Viande hachée", "Frites", "Salade", "Sauce"] },
 
   // 🍕 Pizza
-  { id: "pizza-poulet", name: "Poulet", category: "Pizza", price: 30, currency: "DH", image: "/images/pizza/pizza-poulet.png", ingredients: ["Pâte", "Sauce tomate", "Poulet", "Mozzarella", "Poivrons", "Olives"] },
-  { id: "pizza-4-fromages", name: "4 Fromages", category: "Pizza", price: 35, currency: "DH", image: "/images/pizza/pizza-4-fromages.png", ingredients: ["Pâte", "Sauce tomate", "Mozzarella", "Gouda", "Emmental", "Chèvre"] },
+  { id: "pizza-poulet", name: "Poulet", category: "Pizza", price: 30, currency: "DH", image: "/images/pizza/pizza-poulet.png", ingredients: ["Pâte", "Sauce tomate", "Poulet", "Mozzarella", "Poivrons", "Huile d'olive"] },
+  { id: "pizza-4-fromages", name: "4 Fromages", category: "Pizza", price: 35, currency: "DH", image: "/images/pizza/pizza-4-fromages.png", ingredients: ["Pâte", "Sauce tomate", "Mozzarella", "Edam", "Fromage bleu", "Fromage carré", "Huile d'olive"] },
   { id: "pizza-thon", name: "Pizza Thon", category: "Pizza", price: 30, currency: "DH", image: "/images/pizza/pizza-thon.png", ingredients: ["Pâte", "Sauce tomate", "Thon", "Mozzarella", "Thym", "Huile d'olive"] },
-  { id: "pizza-fruit-de-mer", name: "Fruit de Mer", category: "Pizza", price: 35, currency: "DH", image: "/images/pizza/pizza-fruit-de-mer.png", featured: true, ingredients: ["Pâte", "Sauce tomate", "Crevettes", "Calamar", "Moules", "Mozzarella"] },
-  { id: "pizza-margarita", name: "Margarita", category: "Pizza", price: 20, currency: "DH", image: "/images/pizza/pizza-margarita.png", ingredients: ["Pâte", "Sauce tomate", "Mozzarella", "Basilic", "Huile d'olive"] },
-  { id: "pizza-4-saisons", name: "4 Saisons", category: "Pizza", price: 35, currency: "DH", image: "/images/pizza/pizza-4-saisons.png", ingredients: ["Pâte", "Sauce tomate", "Jambon", "Champignons", "Olives", "Poivrons", "Mozzarella"] },
+  { id: "pizza-fruit-de-mer", name: "Fruit de Mer", category: "Pizza", price: 35, currency: "DH", image: "/images/pizza/pizza-fruit-de-mer.png", featured: true, ingredients: ["Pâte", "Sauce tomate", "Crevettes", "Sepia grillée", "Mozzarella"] },
+  { id: "pizza-margarita", name: "Margarita", category: "Pizza", price: 20, currency: "DH", image: "/images/pizza/pizza-margarita.png", ingredients: ["Pâte", "Sauce tomate", "Mozzarella", "Huile d'olive"] },
+  { id: "pizza-4-saisons", name: "4 Saisons", category: "Pizza", price: 35, currency: "DH", image: "/images/pizza/pizza-4-saisons.png", ingredients: ["Pâte", "Sauce tomate", "Poulé grillé", "Viande hachée", "Thon", "Fruit de mer", "Mozzarella"] },
   { id: "pizza-vegetarienne", name: "Végétarienne", category: "Pizza", price: 30, currency: "DH", image: "/images/pizza/pizza-vegetarienne.png", ingredients: ["Pâte", "Sauce tomate", "Poivrons", "Champignons", "Olives", "Oignons", "Mozzarella"] },
-  { id: "pizza-le-chef", name: "Le Chef", category: "Pizza", price: 45, currency: "DH", image: "/images/pizza/pizza-le-chef.png", ingredients: ["Pâte", "Sauce tomate", "Poulet", "Viande hachée", "Merguez", "Poivrons", "Mozzarella"] },
+  { id: "pizza-le-chef", name: "Le Chef", category: "Pizza", price: 45, currency: "DH", image: "/images/pizza/pizza-le-chef.png", ingredients: ["Pâte", "Sauce tomate", "Poulet", "Viande hachée", "Fruit de mer", "Charcuterie", "Mozzarella"] },
 
   // 🥪 Panini
   { id: "panini-viande-hachee", name: "Viande Hachée", category: "Panini", price: 20, currency: "DH", image: "/images/panini/panini-viande-hachee.png", ingredients: ["Pain panini", "Viande hachée", "Fromage", "Sauce"] },
   { id: "panini-poulet", name: "Poulet", category: "Panini", price: 20, currency: "DH", image: "/images/panini/panini-poulet.png", ingredients: ["Pain panini", "Poulet", "Fromage", "Sauce"] },
   { id: "panini-charcuterie", name: "Charcuterie", category: "Panini", price: 20, currency: "DH", image: "/images/panini/panini-charcuterie.png", ingredients: ["Pain panini", "Charcuterie", "Fromage", "Sauce"] },
   { id: "panini-thon", name: "Thon", category: "Panini", price: 15, currency: "DH", image: "/images/panini/panini-thon.png", ingredients: ["Pain panini", "Thon", "Fromage", "Sauce"] },
-  { id: "panini-mixte", name: "Mixte", category: "Panini", price: 25, currency: "DH", image: "/images/panini/panini-mixte.png", ingredients: ["Pain panini", "Poulet", "Viande hachée", "Fromage", "Sauce"] },
-  { id: "panini-nuggetes", name: "Nuggetes", category: "Panini", price: 20, currency: "DH", image: "/images/panini/panini-nuggetes.png", ingredients: ["Pain panini", "Nuggets de poulet", "Fromage", "Sauce"] },
+  { id: "panini-mixte", name: "Mixte", category: "Panini", price: 25, currency: "DH", image: "/images/panini/panini-mixte.png", ingredients: ["Pain panini", "Poulet", "Viande hachée", "Charcuterie", "Fromage", "Sauce"] },
 
   // 🌯 Tacos
-  { id: "tacos-sepia", name: "Sepia", category: "Tacos", price: 30, currency: "DH", image: "/images/tacos/tacos-sepia.png", ingredients: ["Galette", "Sépia panée", "Frites", "Fromage fondu", "Sauce"] },
-  { id: "tacos-poulet", name: "Poulet", category: "Tacos", price: 30, currency: "DH", image: "/images/tacos/tacos-poulet.png", ingredients: ["Galette", "Poulet", "Frites", "Fromage fondu", "Sauce"] },
-  { id: "tacos-crispy", name: "Crispy", category: "Tacos", price: 30, currency: "DH", image: "/images/tacos/tacos-crispy.png", ingredients: ["Galette", "Poulet crispy", "Frites", "Fromage fondu", "Sauce"] },
-  { id: "tacos-viande-hachee", name: "Viande Hachée", category: "Tacos", price: 30, currency: "DH", image: "/images/tacos/tacos-viande-hachee.png", ingredients: ["Galette", "Viande hachée", "Frites", "Fromage fondu", "Sauce"] },
-  { id: "tacos-mixte", name: "Mixte", category: "Tacos", price: 35, currency: "DH", image: "/images/tacos/tacos-mixte.png", ingredients: ["Galette", "Poulet", "Viande hachée", "Frites", "Fromage fondu", "Sauce"] },
-  { id: "tacos-le-chef", name: "Le Chef", category: "Tacos", price: 45, currency: "DH", image: "/images/tacos/tacos-le-chef.png", featured: true, ingredients: ["Galette", "Poulet", "Viande hachée", "Merguez", "Frites", "Fromage fondu", "Sauce"] },
+  { id: "tacos-sepia", name: "Sepia", category: "Tacos", price: 30, currency: "DH", image: "/images/tacos/tacos-sepia.png", ingredients: ["Galette", "Sépia panée", "Frites", "Fromage", "Sauce"] },
+  { id: "tacos-poulet", name: "Poulet", category: "Tacos", price: 30, currency: "DH", image: "/images/tacos/tacos-poulet.png", ingredients: ["Galette", "Poulet", "Frites", "Fromage", "Sauce"] },
+  { id: "tacos-crispy", name: "Crispy", category: "Tacos", price: 30, currency: "DH", image: "/images/tacos/tacos-crispy.png", ingredients: ["Galette", "Poulet crispy", "Frites", "Fromage", "Sauce"] },
+  { id: "tacos-viande-hachee", name: "Viande Hachée", category: "Tacos", price: 30, currency: "DH", image: "/images/tacos/tacos-viande-hachee.png", ingredients: ["Galette", "Viande hachée", "Frites", "Fromage", "Sauce"] },
+  { id: "tacos-mixte", name: "Mixte", category: "Tacos", price: 35, currency: "DH", image: "/images/tacos/tacos-mixte.png", ingredients: ["Galette", "Poulet", "Viande hachée", "Frites", "Fromage", "Sauce"] },
+  { id: "tacos-le-chef", name: "Le Chef", category: "Tacos", price: 45, currency: "DH", image: "/images/tacos/tacos-le-chef.png", featured: true, ingredients: ["Galette", "Poulet", "Viande hachée", "Frites", "Fromage", "Sauce"] },
 
   // 🥗 Salade
   { id: "salade-marocaine", name: "Marocaine", category: "Salade", price: 17, currency: "DH", image: "/images/salade/salade-marocaine.png", ingredients: ["Tomate", "Concombre", "Oignon", "Poivron", "Persil", "Huile d'olive"] },
@@ -112,13 +111,13 @@ export const products: Product[] = [
   { id: "salade-le-chef", name: "Le Chef", category: "Salade", price: 30, currency: "DH", image: "/images/salade/salade-le-chef.png", ingredients: ["Poulet", "Thon", "Œuf", "Tomate", "Olives", "Laitue"] },
 
   // 🍟 Frites
-  { id: "frites-fromage", name: "Frites Fromage", category: "Frites", price: 12, currency: "DH", image: "/images/frites/frites-fromage.png", ingredients: ["Frites", "Fromage fondu"] },
-  { id: "frites-crispy", name: "Frites Crispy", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-crispy.png", ingredients: ["Frites", "Poulet crispy", "Fromage fondu"] },
-  { id: "frites-dinde-fumees", name: "Frites Dinde Fumées", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-dinde-fumees.png", ingredients: ["Frites", "Dinde fumée", "Fromage fondu"] },
-  { id: "frites-mixte", name: "Frites Mixte", category: "Frites", price: 30, currency: "DH", image: "/images/frites/frites-mixte.png", ingredients: ["Frites", "Poulet", "Viande hachée", "Fromage fondu"] },
-  { id: "frites-poulet", name: "Frites Poulet", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-poulet.png", ingredients: ["Frites", "Poulet", "Fromage fondu"] },
-  { id: "frites-viande-hachee", name: "Frites Viande Hachée", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-viande-hachee.png", ingredients: ["Frites", "Viande hachée", "Fromage fondu"] },
-  { id: "cornet-de-frites", name: "Cornet de Frites", category: "Frites", price: 7, currency: "DH", image: "/images/frites/cornet-de-frites.png", ingredients: ["Frites", "Sel"] },
+  { id: "frites-fromage", name: "Frites Fromage", category: "Frites", price: 12, currency: "DH", image: "/images/frites/frites-fromage.png", ingredients: ["Frites", "Fromage"] },
+  { id: "frites-crispy", name: "Frites Crispy", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-crispy.png", ingredients: ["Frites", "Poulet crispy", "Fromage"] },
+  { id: "frites-dinde-fumees", name: "Frites Dinde Fumées", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-dinde-fumees.png", ingredients: ["Frites", "Dinde fumée", "Fromage"] },
+  { id: "frites-mixte", name: "Frites Mixte", category: "Frites", price: 30, currency: "DH", image: "/images/frites/frites-mixte.png", ingredients: ["Frites", "Poulet", "Viande hachée", "Fromage"] },
+  { id: "frites-poulet", name: "Frites Poulet", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-poulet.png", ingredients: ["Frites", "Poulet", "Fromage"] },
+  { id: "frites-viande-hachee", name: "Frites Viande Hachée", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-viande-hachee.png", ingredients: ["Frites", "Viande hachée", "Fromage"] },
+  { id: "cornet-de-frites", name: "Cornet de Frites", category: "Frites", price: 7, currency:"DH", image: "/images/frites/cornet-de-frites.png", ingredients: ["Frites", "Salt"]},
 
   // 🥤 Jus
   { id: "jus-de-banane", name: "Jus de Banane", category: "Jus", price: 15, currency: "DH", image: "/images/jus/jus-de-banane.png", ingredients: ["Banane", "Lait", "Sucre"] },
