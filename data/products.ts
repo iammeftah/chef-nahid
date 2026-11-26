@@ -154,7 +154,7 @@ export const products: Product[] = [
   { id: "crepe-milka", name: "Crêpe Milka", category: "Crêpe", price: 20, currency: "DH", image: "/images/crepe/crepe-milka.png", ingredients: ["Pâte à crêpe", "Chocolat Milka"] },
   { id: "crepe-kitkat", name: "Crêpe KitKat", category: "Crêpe", price: 20, currency: "DH", image: "/images/crepe/crepe-kitkat.png", ingredients: ["Pâte à crêpe", "KitKat", "Chocolat fondu"] },
   { id: "crepe-mars", name: "Crêpe Mars", category: "Crêpe", price: 20, currency: "DH", image: "/images/crepe/crepe-mars.png", ingredients: ["Pâte à crêpe", "Mars", "Chocolat fondu"] },
-  { id: "crepe-oreo", name: "Crêpe Oreo", category: "Crêpe", price: 20, currency: "DH", image: "/images/crepe/crepe-oreo.png", ingredients: ["Pâte à crêpe", "Oreo", "Chocolat fondu"] },
+  { id: "crepe-oreo", name: "Crêpe Oreo", category: "Crêpe", price: 17, currency: "DH", image: "/images/crepe/crepe-oreo.png", ingredients: ["Pâte à crêpe", "Oreo", "Chocolat fondu"] },
   { id: "crepe-fruits", name: "Crêpe Fruits", category: "Crêpe", price: 30, currency: "DH", image: "/images/crepe/crepe-fruits.png", ingredients: ["Pâte à crêpe", "Fruits frais"] },
   { id: "crepe-amande", name: "Crêpe Amande", category: "Crêpe", price: 30, currency: "DH", image: "/images/crepe/crepe-amande.png", ingredients: ["Pâte à crêpe", "Pâte d'amande", "Miel"] },
 
@@ -167,7 +167,7 @@ export const products: Product[] = [
   { id: "gaufre-milka", name: "Gaufre Milka", category: "Gaufre", price: 20, currency: "DH", image: "/images/gaufre/gaufre-milka.png", ingredients: ["Pâte à gaufre", "Chocolat Milka"] },
   { id: "gaufre-kitkat", name: "Gaufre KitKat", category: "Gaufre", price: 20, currency: "DH", image: "/images/gaufre/gaufre-kitkat.png", ingredients: ["Pâte à gaufre", "KitKat", "Chocolat fondu"] },
   { id: "gaufre-mars", name: "Gaufre Mars", category: "Gaufre", price: 20, currency: "DH", image: "/images/gaufre/gaufre-mars.png", ingredients: ["Pâte à gaufre", "Mars", "Chocolat fondu"] },
-  { id: "gaufre-oreo", name: "Gaufre Oreo", category: "Gaufre", price: 20, currency: "DH", image: "/images/gaufre/gaufre-oreo.png", ingredients: ["Pâte à gaufre", "Oreo", "Chocolat fondu"] },
+  { id: "gaufre-oreo", name: "Gaufre Oreo", category: "Gaufre", price: 17, currency: "DH", image: "/images/gaufre/gaufre-oreo.png", ingredients: ["Pâte à gaufre", "Oreo", "Chocolat fondu"] },
   { id: "gaufre-fruits", name: "Gaufre Fruits", category: "Gaufre", price: 30, currency: "DH", image: "/images/gaufre/gaufre-fruits.png", ingredients: ["Pâte à gaufre", "Fruits frais"] },
   { id: "gaufre-amande", name: "Gaufre Amande", category: "Gaufre", price: 30, currency: "DH", image: "/images/gaufre/gaufre-amande.png", ingredients: ["Pâte à gaufre", "Pâte d'amande", "Miel"] },
   { id: "gaufre-caramel", name: "Gaufre Caramel", category: "Gaufre", price: 30, currency: "DH", image: "/images/gaufre/gaufre-caramel.png", ingredients: ["Pâte à gaufre", "Caramel"] },
@@ -182,7 +182,7 @@ export const products: Product[] = [
   { id: "pancake-milka", name: "Pancake Milka", category: "Pancake", price: 20, currency: "DH", image: "/images/pancake/pancake-milka.png", ingredients: ["Pâte à pancake", "Chocolat Milka"] },
   { id: "pancake-kitkat", name: "Pancake KitKat", category: "Pancake", price: 20, currency: "DH", image: "/images/pancake/pancake-kitkat.png", ingredients: ["Pâte à pancake", "KitKat", "Chocolat fondu"] },
   { id: "pancake-mars", name: "Pancake Mars", category: "Pancake", price: 20, currency: "DH", image: "/images/pancake/pancake-mars.png", ingredients: ["Pâte à pancake", "Mars", "Chocolat fondu"] },
-  { id: "pancake-oreo", name: "Pancake Oreo", category: "Pancake", price: 20, currency: "DH", image: "/images/pancake/pancake-oreo.png", ingredients: ["Pâte à pancake", "Oreo", "Chocolat fondu"] },
+  { id: "pancake-oreo", name: "Pancake Oreo", category: "Pancake", price: 17, currency: "DH", image: "/images/pancake/pancake-oreo.png", ingredients: ["Pâte à pancake", "Oreo", "Chocolat fondu"] },
   { id: "pancake-fruits", name: "Pancake Fruits", category: "Pancake", price: 30, currency: "DH", image: "/images/pancake/pancake-fruits.png", ingredients: ["Pâte à pancake", "Fruits frais"] },
   { id: "pancake-caramel", name: "Pancake Caramel", category: "Pancake", price: 30, currency: "DH", image: "/images/pancake/pancake-caramel.png", ingredients: ["Pâte à pancake", "Caramel"] },
 
