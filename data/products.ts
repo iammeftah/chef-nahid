@@ -111,12 +111,12 @@ export const products: Product[] = [
   { id: "salade-le-chef", name: "Le Chef", category: "Salade", price: 30, currency: "DH", image: "/images/salade/salade-le-chef.png", ingredients: ["Poulet", "Thon", "Œuf", "Tomate", "Olives", "Laitue"] },
 
   // 🍟 Frites
-  { id: "frites-fromage", name: "Frites Fromage", category: "Frites", price: 12, currency: "DH", image: "/images/frites/frites-fromage.png", ingredients: ["Frites", "Fromage"] },
-  { id: "frites-crispy", name: "Frites Crispy", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-crispy.png", ingredients: ["Frites", "Poulet crispy", "Fromage"] },
-  { id: "frites-dinde-fumees", name: "Frites Dinde Fumées", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-dinde-fumees.png", ingredients: ["Frites", "Dinde fumée", "Fromage"] },
-  { id: "frites-mixte", name: "Frites Mixte", category: "Frites", price: 30, currency: "DH", image: "/images/frites/frites-mixte.png", ingredients: ["Frites", "Poulet", "Viande hachée", "Fromage"] },
-  { id: "frites-poulet", name: "Frites Poulet", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-poulet.png", ingredients: ["Frites", "Poulet", "Fromage"] },
-  { id: "frites-viande-hachee", name: "Frites Viande Hachée", category: "Frites", price: 25, currency: "DH", image: "/images/frites/frites-viande-hachee.png", ingredients: ["Frites", "Viande hachée", "Fromage"] },
+  { id: "frites-fromage", name: "Frites Fromage", category: "Frites", price: 15, currency: "DH", image: "/images/frites/frites-fromage.png", ingredients: ["Frites", "Fromage"] },
+  { id: "frites-crispy", name: "Frites Crispy", category: "Frites", price: 30, currency: "DH", image: "/images/frites/frites-crispy.png", ingredients: ["Frites", "Poulet crispy", "Fromage"] },
+  { id: "frites-dinde-fumees", name: "Frites Dinde Fumées", category: "Frites", price: 30, currency: "DH", image: "/images/frites/frites-dinde-fumees.png", ingredients: ["Frites", "Dinde fumée", "Fromage"] },
+  { id: "frites-mixte", name: "Frites Mixte", category: "Frites", price: 35, currency: "DH", image: "/images/frites/frites-mixte.png", ingredients: ["Frites", "Poulet", "Viande hachée", "Fromage"] },
+  { id: "frites-poulet", name: "Frites Poulet", category: "Frites", price: 30, currency: "DH", image: "/images/frites/frites-poulet.png", ingredients: ["Frites", "Poulet", "Fromage"] },
+  { id: "frites-viande-hachee", name: "Frites Viande Hachée", category: "Frites", price: 30, currency: "DH", image: "/images/frites/frites-viande-hachee.png", ingredients: ["Frites", "Viande hachée", "Fromage"] },
   { id: "cornet-de-frites", name: "Cornet de Frites", category: "Frites", price: 7, currency:"DH", image: "/images/frites/cornet-de-frites.png", ingredients: ["Frites", "Salt"]},
 
   // 🥤 Jus

@@ -126,7 +126,7 @@ export function FooterSection() {
         <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
           Horaires
         </span>
-        <p className="mt-2 text-sm font-semibold text-foreground">16h – 4h</p>
+        <p className="mt-2 text-sm font-semibold text-foreground">13h – 4h</p>
         <p className="mt-0.5 text-[11px] uppercase tracking-wide text-muted-foreground">
           Tous les jours
         </p>
